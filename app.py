@@ -1,32 +1,29 @@
-from flask import Flask, render_template, url_for
-from datetime import datetime
-import gspread
-from oauth2client.service_account import ServiceAccountCredentials
+from flask import Flask, render_template, request, redirect, url_for
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='templates')
 
-scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
-
-credentials_file = '/Users/nidhibiswas/flask/token.json'
-
-credentials = ServiceAccountCredentials.from_json_keyfile_name(credentials_file, scope)
-gc = gspread.authorize(credentials)
-sheet_title = 'Your Sheet Title'
-worksheet = gc.open('Test Sheet').sheet1
-
-
-
-
-
-
+todos = []
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('index.html', todos=todos)
 
-@app.route('/add')
+@app.route('/add', methods=['POST'])
 def add():
-    
+    todo = request.form['todo']
+    todos.append({'task': todo, 'done': False})
+    return redirect(url_for('index'))
+
+
+@app.route('/check/<int:index>')
+def check(index):
+    todos[index]['done'] = not todos[index]['done']
+    return redirect(url_for('index'))
+
+@app.route('/delete/<int:index>')
+def delete(index):
+    del todos[index]
+    return redirect(url_for('index'))
 
 if __name__ == '__main__':
     app.run(debug=True)
