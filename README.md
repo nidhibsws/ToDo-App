@@ -25,7 +25,7 @@ Features:
 - Add Task: Enter a task in the input field and click the "Add" button to add it to the list.
 - Mark Task as Completed: Click the "check" link next to a task to mark it as completed. The task text will be crossed out.
 - Delete Task: Click the "delete" link next to a task to delete it from the list.
-- 
+  
 Code Overview
 app.py: This file contains the Flask application code. It defines routes for handling different actions such as adding, checking, and deleting tasks.
 index.html: This HTML file defines the structure of the web page. It contains an input field for adding tasks and a list to display existing tasks.
