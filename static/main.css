@@ -1,11 +1,11 @@
 
 
 body {
-    background-image: url('/static/background.png'); /* Adjust the path to your background image */
-    background-size: 78%; /* Stretch the background image to cover the entire background */
-    background-position: center; /* Center the background */
-    background-attachment: fixed; /* Keep the background fixed in the viewport */
-    margin: 0; /* Remove default body margin */
-    padding: 0; /* Remove default body padding */
-    height: 70vh; /* Set body height to 100% of viewport height */
+    background-image: url('/static/background.png'); 
+    background-size: 78%; 
+    background-position: center;
+    background-attachment: fixed; 
+    margin: 0; 
+    padding: 0; 
+    height: 70vh; 
 }
