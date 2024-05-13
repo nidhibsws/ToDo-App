@@ -9,15 +9,17 @@ Technologies Used: Python, Flask, HTML, CSS
 To run the ToDo App locally, follow these steps:
 
 1. Clone the repository:
+```bash
   git clone <repository-url>
+```
 
-2. Navigate to the project directory:
+3. Navigate to the project directory:
    cd ToDo-App
    
-3. Install the required dependencies (assuming you have Python and pip installed):
+4. Install the required dependencies (assuming you have Python and pip installed):
   pip install Flask
 
-4. Run the Flask application:
+5. Run the Flask application:
    python app.py
    
 
